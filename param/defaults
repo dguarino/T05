@@ -1,0 +1,21 @@
+{
+    'input_space_type' : 'mozaik.space.VisualSpace',
+    'input_space': {
+        'update_interval': 7.0, # ms
+        'background_luminance': 30.0, # cd/m²
+    },
+    'retina_lgn': url("param/SpatialFilterRetinaLGN_defaults"),
+    'pgn': url("param/PGN_defaults"),
+    'visual_field': {
+        'centre': (0.0, 0.0), # degrees (x,y)
+        'size': (20.0, 20.0), # degrees (width, height)
+    },
+    'results_dir': '',
+    'name' : 'T05 Model',
+    'reset' : False,
+    'null_stimulus_period' : 140.0,
+    'store_stimuli' : False,
+    'max_delay' : 5.0, 
+    'time_step' : 0.1, 
+    'min_delay' : 0.1,
+}
