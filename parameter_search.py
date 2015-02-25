@@ -18,11 +18,15 @@ CombinationParameterSearch(
   		# 'retina_lgn.params.gain_control.non_linear_gain.luminance_scaler' : [0.08], #[0.01, 0.05, 0.08, 0.15],
   		# 'retina_lgn.params.gain_control.non_linear_gain.contrast_scaler' : [0.01], #[0.001, 0.01, 0.05, 0.08, 0.15]
 
-  		'pgn.LGN_PGN_ConnectionOn.base_weight' : [0.023,0.23],
-  		'pgn.LGN_PGN_ConnectionOff.base_weight' : [0.023,0.23],
+  		# 'pgn.LGN_PGN_ConnectionOn.base_weight' : [0.023,0.23],
+  		# 'pgn.LGN_PGN_ConnectionOff.base_weight' : [0.023,0.23],
+  		# 'pgn.PGN_LGN_ConnectionOn.base_weight' : [0.36,3.6],
+  		# 'pgn.PGN_LGN_ConnectionOff.base_weight' : [0.36,3.6],
 
-  		'pgn.PGN_LGN_ConnectionOn.base_weight' : [0.36,3.6],
-  		'pgn.PGN_LGN_ConnectionOff.base_weight' : [0.36,3.6],
+      # n1 + (K1 * exp(-c1*t))
+      #'retina_lgn.params.receptive_field.func_params.K1' : [0.0],#0.8
+      'retina_lgn.params.receptive_field.func_params.c1' : [0.01, 0.05, 0.1, 0.5],#
+      #'retina_lgn.params.receptive_field.func_params.n1' : [0.01, 0.1],#
 
     }
 ).run_parameter_search()

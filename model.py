@@ -35,8 +35,9 @@ class T05_Model(Model):
         self.input_layer = RetinaLGN( self, self.parameters.retina_lgn.params )
         pgn = PGN(self, self.parameters.pgn.params)
 
-        # PROJECTIONS
 
+        ########################################################
+        # LGN-PGN
         ModularSamplingProbabilisticConnector(
             self,
             'LGN_PGN_ConnectionOn',                     # name
@@ -76,3 +77,78 @@ class T05_Model(Model):
             self.input_layer.sheets['X_OFF'],           # target
             self.parameters.pgn.PGN_LGN_ConnectionOff   # params
         ).connect()
+
+
+        ########################################################
+        # # THALAMO-CORTICAL
+        # GaborConnector(
+        #     self,
+        #     self.input_layer.sheets['X_ON'],
+        #     self.input_layer.sheets['X_OFF'],
+        #     cortex_exc_l4,                                      # target
+        #     self.parameters.l4_cortex_exc.AfferentConnection,   # parameters
+        #     'V1AffConnection'                                  # name
+        # )
+
+        # GaborConnector(
+        #     self,
+        #     self.input_layer.sheets['X_ON'],
+        #     self.input_layer.sheets['X_OFF'],
+        #     cortex_inh_l4,
+        #     self.parameters.l4_cortex_inh.AfferentConnection,
+        #     'V1AffInhConnection'
+        # )
+
+
+        ########################################################
+        # # CORTICO-CORTICAL
+        # ModularSamplingProbabilisticConnector(
+        #     self,
+        #     'V1L4ExcL4ExcConnection',
+        #     cortex_exc_l4,
+        #     cortex_exc_l4,
+        #     self.parameters.l4_cortex_exc.L4ExcL4ExcConnection
+        # ).connect()
+
+        # ModularSamplingProbabilisticConnector(
+        #     self,
+        #     'V1L4ExcL4InhConnection',
+        #     cortex_exc_l4,
+        #     cortex_inh_l4,
+        #     self.parameters.l4_cortex_exc.L4ExcL4InhConnection
+        # ).connect()
+
+        # ModularSamplingProbabilisticConnector(
+        #     self,
+        #     'V1L4InhL4ExcConnection',
+        #     cortex_inh_l4,
+        #     cortex_exc_l4,
+        #     self.parameters.l4_cortex_inh.L4InhL4ExcConnection
+        # ).connect()
+
+        # ModularSamplingProbabilisticConnector(
+        #     self,
+        #     'V1L4InhL4InhConnection',
+        #     cortex_inh_l4,
+        #     cortex_inh_l4,
+        #     self.parameters.l4_cortex_inh.L4InhL4InhConnection
+        # ).connect()
+
+
+        ########################################################
+        # # CORTICO-THALAMIC
+        # ModularSamplingProbabilisticConnector(
+        #     self,
+        #     'V1EffConnectionOn',
+        #     cortex_exc_l4,
+        #     self.input_layer.sheets['X_ON'],
+        #     self.parameters.l4_cortex_exc.EfferentConnection
+        # ).connect()
+
+        # ModularSamplingProbabilisticConnector(
+        #     self,
+        #     'V1EffConnectionOff',
+        #     cortex_exc_l4,
+        #     self.input_layer.sheets['X_OFF'],
+        #     self.parameters.l4_cortex_exc.EfferentConnection
+        # ).connect()

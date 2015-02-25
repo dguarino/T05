@@ -13,14 +13,14 @@
             'model' : 'IF_cond_exp',
             'params' : {
                 'v_thresh': -50.0,  # HuertasGroffSmith2005 # -35, # Coombes2003
-                'v_rest': -71.0,    # HuertasGroffSmith2005
+                'v_rest': -62.0,    # HuertasGroffSmith2005
                 'v_reset': -55.0,   # HuertasGroffSmith2005
                 'tau_refrac': 4.0,  # HuertasGroffSmith2005
                 'tau_m': 20.0,      # ms # 17.3, # Rall1995 # 23.0, # DestexheContrerasSteriadeSejnowski1996
                 'cm': 1.0,          # HuertasGroffSmith2005
                 'e_rev_E': 0.0,     # HuertasGroffSmith2005
                 'e_rev_I': -85.0,   # HuertasGroffSmith2005
-                'tau_syn_E': 7.0,   # 
+                'tau_syn_E': 6.0,   # <<<<<<<<<<<<<<<<<<<<<<<<<<< New!!!
                 'tau_syn_I': 10.0,  # Kremkow
             },
             'initial_values' : {
@@ -59,9 +59,9 @@
         },
         'delay_functions' : {},
         'weight_expression' : 'f1', 
-        'delay_expression' : '3', # FunkeEysel1998
-        'base_weight': 0.002, # µS
-        'num_samples' : 30,
+        'delay_expression' : '1', # Lindstrom1982, FunkeEysel1998
+        'base_weight': 0.004, # µS
+        'num_samples' : 10,
     },
 
     # from LGN Off
@@ -80,9 +80,9 @@
         },
         'delay_functions' : {},
         'weight_expression' : 'f1',
-        'delay_expression' : '3', # FunkeEysel1998
-        'base_weight': 0.002, # µS 
-        'num_samples' : 30,
+        'delay_expression' : '1', # Lindstrom1982, FunkeEysel1998
+        'base_weight': 0.004, # µS 
+        'num_samples' : 10,
     },
     
     # lateral
@@ -101,7 +101,7 @@
         },
         'delay_functions' : {},
         'weight_expression' : 'f1',
-        'delay_expression' : '1', 
+        'delay_expression' : '0.1', 
         'base_weight': 0.001, # µS
         'num_samples' : 10,
     },
@@ -122,8 +122,8 @@
         },
         'delay_functions' : {},
         'weight_expression' : 'f1',
-        'delay_expression' : '3', # FunkeEysel1998
-        'base_weight': 0.002, # µS
+        'delay_expression' : '1', # Lindstrom1982, FunkeEysel1998
+        'base_weight': 0.005, # µS
         'num_samples' : 10,
     },
     # to LGN
@@ -142,8 +142,8 @@
         },
         'delay_functions' : {},
         'weight_expression' : 'f1',
-        'delay_expression' : '3', # FunkeEysel1998
-        'base_weight': 0.002, # µS
+        'delay_expression' : '1', # Lindstrom1982, FunkeEysel1998
+        'base_weight': 0.005, # µS
         'num_samples' : 10,
     },
 
