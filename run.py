@@ -25,7 +25,7 @@ logger = mozaik.getMozaikLogger()
 
 print sys.argv
 
-if True:
+if False:
     data_store,model = run_workflow( 'T05', T05_Model, create_experiments )
     model.connectors['LGN_PGN_ConnectionOn'].store_connections(data_store)    
     model.connectors['LGN_PGN_ConnectionOff'].store_connections(data_store)    

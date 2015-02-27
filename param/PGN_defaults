@@ -101,7 +101,7 @@
         },
         'delay_functions' : {},
         'weight_expression' : 'f1',
-        'delay_expression' : '0.1', 
+        'delay_expression' : '1', 
         'base_weight': 0.001, # µS
         'num_samples' : 10,
     },

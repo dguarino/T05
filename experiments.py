@@ -17,9 +17,9 @@ def create_experiments(model):
             # Full: PapaioannouWhite1972
             # MeasureFlatLuminanceSensitivity(
             #    model, 
-            #    luminances=[0.0001, 0.1, 10.0, 20.0, 30.0, 50.0], #[0.0001, 50.0],
+            #    luminances=[0.0001, 0.1, 10.0, 20.0, 30.0, 50.0, 100], #[0.0001, 50.0],
             #    step_duration=147*7,
-            #    num_trials=14
+            #    num_trials=4
             # ),
 
             # CONTRAST SENSITIVITY
@@ -28,7 +28,7 @@ def create_experiments(model):
             # Full: DerringtonLennie1984, HeggelundKarlsenFlugsrudNordtug1989, SaulHumphrey1990, BoninManteCarandini2005
             # MeasureContrastSensitivity(
             #     model, 
-            #     size=2.0,
+            #     size=20.0,
             #     orientation=numpy.pi/2, 
             #     spatial_frequency=0.2, 
             #     temporal_frequency=8.0,
@@ -42,7 +42,7 @@ def create_experiments(model):
             # MeasureFrequencySensitivity(
             #     model, 
             #     orientation=numpy.pi/2, 
-            #     contrasts=[100], #[25,50,100], #
+            #     contrasts=[60], #[25,50,100], #
             #     spatial_frequencies=[0.02, 0.08, 0.16, 0.24, 0.64, 1.28],
             #     temporal_frequencies=[8.0],
             #     grating_duration=147*7,
@@ -66,19 +66,19 @@ def create_experiments(model):
     
             # SIZE TUNING
             # as in ClelandLeeVidyasagar1983, BoninManteCarandini2005
-            MeasureSizeTuning(
-                model, 
-                num_sizes=3, 
-                max_size=16.0, 
-                orientation=numpy.pi/2, 
-                spatial_frequency=0.2, 
-                temporal_frequency=8.0,
-                grating_duration=147*7,
-                contrasts=[40], #40,100  to look for contrast-dependent RF expansion
-                num_trials=2,
-                log_spacing=True,
-                with_flat=True #use also flat luminance discs
-            ),
+            # MeasureSizeTuning(
+            #     model, 
+            #     num_sizes=7, 
+            #     max_size=16.0, 
+            #     orientation=numpy.pi/2, 
+            #     spatial_frequency=0.2, 
+            #     temporal_frequency=8.0,
+            #     grating_duration=147*7,
+            #     contrasts=[80], #40,100  to look for contrast-dependent RF expansion
+            #     num_trials=4,
+            #     log_spacing=True,
+            #     with_flat=False #use also flat luminance discs
+            # ),
             
             # LIFELONG SPARSENESS
             # as in RathbunWarlandUsrey2010, AndolinaJonesWangSillito2007
@@ -86,15 +86,15 @@ def create_experiments(model):
             
             # ORIENTATION TUNING (GRATINGS)
             # as in DanielsNormanPettigrew1977, VidyasagarUrbas1982
-            # MeasureOrientationTuningFullfield(
-            #     model,
-            #     num_orientations=8,
-            #     spatial_frequency=0.15,
-            #     temporal_frequency=6.0,
-            #     grating_duration=147*7,
-            #     contrasts=[40, 100],
-            #     num_trials=14
-            # ),
+            MeasureOrientationTuningFullfield(
+                model,
+                num_orientations=8,
+                spatial_frequency=0.2,
+                temporal_frequency=8.0,
+                grating_duration=147*7,
+                contrasts=[80], #[40, 100],
+                num_trials=4
+            ),
 
             # CONTOUR COMPLETION
             # as in SillitoJonesGersteinWest1994, SillitoCudeiroMurphy1993
